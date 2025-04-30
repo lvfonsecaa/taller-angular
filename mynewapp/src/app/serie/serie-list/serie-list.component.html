@@ -1,0 +1,17 @@
+
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col" *ngFor="let serie of series">
+          <div class="card p-2">
+            <img
+              class="card-img-top"
+              src="{{ serie.poster}}"
+              alt="{{ serie.name }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ serie.description }}</h5>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
