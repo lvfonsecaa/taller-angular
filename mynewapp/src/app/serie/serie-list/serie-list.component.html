@@ -1,17 +1,38 @@
-
-  <div class="container mt-5">
-    <div class="row">
-        <div class="col" *ngFor="let serie of series">
-          <div class="card p-2">
-            <img
-              class="card-img-top"
-              src="{{ serie.poster}}"
-              alt="{{ serie.name }}"
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{ serie.description }}</h5>
-            </div>
-          </div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Channel</th>
+            <th>Seasons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let serie of series" class="table-active">
+            <td>{{ serie.id }}</td>
+            <td><a href="#" (click)="selectSerie(serie)">{{ serie.name }}</a></td>
+            <td>{{ serie.channel }}</td>
+            <td>{{ serie.seasons }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+    </div>
+    <div class="col">
+      <div *ngIf="selectedSerie" class="card p-2">
+        <img
+            class="card-img-top"
+            src="{{ selectedSerie.poster}}"
+            alt="{{ selectedSerie.name }}"
+          />
+        <div class="card-body">
+          <h5 class="card-title">{{ selectedSerie.name }}</h5>
+          <p class="card-text">{{ selectedSerie.description }}</p>
         </div>
+      </div>
     </div>
   </div>
+</div>
