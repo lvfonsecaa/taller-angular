@@ -32,7 +32,7 @@ export class SerieListComponent implements OnInit {
     this.selectedSerie = serie;
   }
 
-  promedio (serie:Serie):number
+  promedio ():number
   {
     let suma = 0;
     let numeroSeries = 0;
